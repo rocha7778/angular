@@ -1,0 +1,42 @@
+<div *ngIf="contratado==true">
+    <button (click)="cambiarEstado(false)">No contratar</button>
+    <ul>
+        <li>{{empleado.nombre}}</li>
+        <li>{{empleado.apellido}}</li>
+        <li>{{empleado.edad}}</li>
+
+        <ul> cursos:
+            <li *ngFor="let curso of empleado.cursos">{{curso}}</li>
+        </ul>
+    </ul>
+</div>
+
+
+<div *ngIf="contratado==false">
+    <button (click)="cambiarEstado(true)"> Contratar</button>
+    <ul>
+        <li>no se ha contratado aun</li>
+    </ul>
+</div>
+
+<div>
+    <button (click)="cambiarColor()"> Cambiar color</button>
+
+
+    <ul [ngSwitch]="color">
+        <li *ngSwitchCase="'red'" [ngStyle]="{'color': color}"> color letra</li>
+        <li *ngSwitchCase="'blue'" [ngStyle]="{'color': color}"> color letra</li>
+        <li *ngSwitchCase="'yellow'" [ngStyle]="{'color': color, background:'black'}"> color letra</li>
+        <li *ngSwitchCase="'green'" [ngStyle]="{'color': color}"> color letra</li>
+
+
+    </ul>
+
+</div>
+
+<div>
+
+    escriba el color deseado <input type="text" [(ngModel)]="color" />
+    <pre>{{color}}</pre>
+
+</div>

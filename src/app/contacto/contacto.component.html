@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<p>{{mensaje}} </p>
+
+<div *ngIf="parametro">
+
+    paramtro ulr : {{parametro}}
+</div>
+
+
+<div *ngIf="!parametro">
+
+    <button (click)="redirigir('rocha')"> Redirigir  pagina con  parametro</button>
+</div>

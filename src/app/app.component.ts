@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto-angular4';
+  title = 'proyecto-angular4 from Rocha';
 }

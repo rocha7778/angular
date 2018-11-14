@@ -1,0 +1,60 @@
+<h1>{{title}}</h1>
+<h2>{{mensaje}}</h2>
+
+
+<form #formCoche="ngForm" (ngSubmit)="onSubmit(); formCoche.reset();">
+
+
+    <label>Nombre:</label>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required />
+    <span class="error" *ngIf="nombre.touched && !nombre.valid">
+    El  campo nombre es requerido !!
+  </span>
+
+    <p>
+        <label>Caballos de fuerza:</label>
+        <input type="text" name="caballos" #caballos="ngModel" [(ngModel)]="coche.caballos" required pattern="[0-9]+" />
+
+        <span class="error" *ngIf="caballos.touched && !caballos.valid">
+      El campo Caballos de fuerza es requerido y debe ser numerico
+    </span>
+    </p>
+
+
+    <p>
+        <label>Color:</label>
+        <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required />
+
+        <span class="error" *ngIf="color.touched && !color.valid">
+      El campo color es requerido
+    </span>
+
+    </p>
+
+    <button type="submit" [disabled]="!formCoche.form.valid">Guardar</button>
+
+
+
+
+</form>
+
+
+<div>
+    <ul *ngFor="let coche of getCoches()">coche
+        <li>Nombre: {{coche.nombre}}</li>
+        <li>Caballos de Fuerza: {{coche.caballos}}</li>
+        <li>Color: {{coche.color}}</li>
+    </ul>
+
+</div>
+
+
+<div>
+    <ul *ngFor="let articulo of articulos">coche
+        <li>UserId: {{articulo.userId}}</li>
+        <li>Id: {{articulo.id}}</li>
+        <li>Title: {{articulo.title}}</li>
+        <li>Body: {{articulo.body}}</li>
+    </ul>
+
+</div>

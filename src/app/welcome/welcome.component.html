@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<p>{{mensajeBienvenida}} </p>
+<br> {{fecha|date:'dd/mm/yy'}}<br>
+<br>
+<br>
+<br> Ingrese un texto<input type="text" [(ngModel)]="mensajeBienvenida" />
+
+<pre>{{mensajeBienvenida}}</pre>
+
+<hr> Digite la prenda que desea agregar <input type="text" [(ngModel)]="prenda">
+<button (click)="addRopaToList(prenda)"> Agregar</button>
+
+<hr>
+<div>
+    <ul>Prendas
+        <li *ngFor="let ropa of getPrendas()">{{ropa}}</li>
+    </ul>
+
+</div>
